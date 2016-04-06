@@ -1,0 +1,87 @@
+#homepage {
+    padding: 0;
+}
+
+.module-list {
+    display: flex;
+    justify-content: center;
+}
+
+.module-item {
+    width: 50vw;
+    height: 100vh;
+    background-color: #333;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        &::before {
+            transform: scale(1.1, 1.1);
+        }
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    &::before {
+        z-index: 1;
+        animation: .5s;
+        transition: transform .5s;
+    }
+
+    &::after {
+        z-index: 2;
+        background-color: rgba(0, 0, 0, .9);
+    }
+
+    a {
+        font-size: 80px;
+        color: #fff;
+        display: block;
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        line-height: 100vh;
+
+        &:hover,
+        &:active {
+            text-decoration: none;
+        }
+
+        span {
+            display: block;
+        }
+    }
+}
+
+#office {
+    &::before {
+        background: url(../img/office.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+#shop {
+    &::before {
+        background: url(../img/shop.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
