@@ -2,8 +2,8 @@ var fs = require('fs');
 var path = require('path');
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize('cci', 'root', 'secret', {
-    'host': 'localhost',
-    'dialect': 'mysql',
+    host: 'localhost',
+    dialect: 'mysql',
  });
 var db = {};
 
