@@ -28,5 +28,29 @@ module.exports = function configRoute(router) {
             name: 'client.edit',
             component: require('./../components/client/edit.vue')
         },
+
+        // ===================================================================================
+        // Sale
+        // ===================================================================================
+
+        '/sale': {
+            name: 'sale.index',
+            component: require('./../components/sale/index.vue')
+        },
+
+        '/sale/create': {
+            name: 'sale.create',
+            component: require('./../components/sale/create.vue')
+        },
+
+        '/sale/:id': {
+            name: 'sale.show',
+            component: require('./../components/sale/show.vue')
+        },
+
+        '/sale/:id/edit': {
+            name: 'sale.edit',
+            component: require('./../components/sale/edit.vue')
+        },
     });
 };

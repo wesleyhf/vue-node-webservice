@@ -11,6 +11,7 @@ app.use(cors());
 app.use('/category', require('./routes/categories'));
 app.use('/product', require('./routes/products'));
 app.use('/client', require('./routes/clients'));
+app.use('/sale', require('./routes/sales'));
 
 app.listen(4000, function () {
     console.log('Server in running on port 4000!');

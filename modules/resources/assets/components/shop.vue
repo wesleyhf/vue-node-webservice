@@ -17,6 +17,7 @@
                     <ul class="nav navbar-nav">
                         <li><a v-link="{ name: 'dashboard.index' }">Dashboard</a></li>
                         <li><a v-link="{ name: 'client.index' }">Clients</a></li>
+                        <li><a v-link="{ name: 'sale.index' }">Sales</a></li>
                     </ul>
                 </div>
             </div>

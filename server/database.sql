@@ -38,11 +38,11 @@ CREATE TABLE sales
 
 CREATE TABLE sale_items (
     id INT(11) NOT NULL AUTO_INCREMENT,
-    salesId INT(11) NOT NULL,
+    saleId INT(11) NOT NULL,
     productId INT(11) NOT NULL,
     quantity INT(11) NOT NULL,
     unitary_value NUMERIC(15,2) NOT NULL,
     PRIMARY KEY(id),
-    FOREIGN KEY(salesId) REFERENCES sales(id) ON DELETE CASCADE,
+    FOREIGN KEY(saleId) REFERENCES sales(id) ON DELETE CASCADE,
     FOREIGN KEY(productId) REFERENCES products(id) ON DELETE CASCADE
 );

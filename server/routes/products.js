@@ -15,6 +15,21 @@ router.get('/', function(req, res) {
     });
 });
 
+// index - get all products active
+router.get('/active', function(req, res) {
+    models.products.findAll({
+        where: {
+            active: 1,
+        }
+    }).then(function(products){
+        res.send({
+            products: products.map(function(product) {
+                return product.dataValues;
+            }),
+        });
+    });
+});
+
 // store
 router.post('/', function(req, res) {
     models.products.create({

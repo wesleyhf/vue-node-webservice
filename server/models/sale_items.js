@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    sales_id: {
+    sale_id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
@@ -34,7 +34,13 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'sale_items',
-    timestamps: false
+    timestamps: false,
+    classMethods: {
+      associate: function(models) {
+        SaleItems.belongsTo(models.sales);
+        SaleItems.belongsTo(models.products);
+      }
+    }
   });
 
   return SaleItems;

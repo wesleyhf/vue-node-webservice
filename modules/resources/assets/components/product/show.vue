@@ -11,7 +11,7 @@
         <p><b>ID:</b> {{ product.id }}</p>
         <p><b>Name:</b> {{ product.name }}</p>
         <p><b>Category:</b> {{ product.category.title }}</p>
-        <p><b>Value:</b> $ {{ product.value }}</p>
+        <p><b>Value:</b> {{ product.value | currency '$ '}}</p>
         <p>
             <b>Status:</b>
             <span class="label label-success" v-if="product.active">Active</span>

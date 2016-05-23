@@ -23,7 +23,12 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'clients',
-    timestamps: false
+    timestamps: false,
+    classMethods: {
+      associate: function(models) {
+        Clients.hasMany(models.sales);
+      }
+    }
   });
 
   return Clients;

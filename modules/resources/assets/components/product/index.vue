@@ -34,7 +34,7 @@
                     <td>{{ product.id }}</td>
                     <td>{{ product.name }}</td>
                     <td>{{ product.category.title }}</td>
-                    <td>$ {{ product.value }}</td>
+                    <td>{{ product.value | currency '$ '}}</td>
 
                     <td>
                         <span class="label label-success" v-if="product.active">Active</span>

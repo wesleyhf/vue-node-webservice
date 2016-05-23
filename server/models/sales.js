@@ -31,7 +31,13 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'sales',
-    timestamps: false
+    timestamps: false,
+    classMethods: {
+      associate: function(models) {
+        Sales.belongsTo(models.clients);
+        Sales.hasMany(models.sale_items);
+      }
+    }
   });
 
   return Sales;

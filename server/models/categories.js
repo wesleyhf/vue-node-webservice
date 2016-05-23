@@ -14,7 +14,12 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'categories',
-    timestamps: false
+    timestamps: false,
+    classMethods: {
+      associate: function(models) {
+        Categories.hasMany(models.products);
+      }
+    }
   });
 
   return Categories;
