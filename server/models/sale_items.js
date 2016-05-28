@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  var SaleItems = sequelize.define('sale_items', {
+  var SaleItems = sequelize.define('saleItems', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    tableName: 'sale_items',
+    tableName: 'saleItems',
     timestamps: false,
     classMethods: {
       associate: function(models) {

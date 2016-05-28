@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Products.belongsTo(models.categories);
-        Products.hasMany(models.sale_items);
+        Products.hasMany(models.saleItems);
       }
     }
   });

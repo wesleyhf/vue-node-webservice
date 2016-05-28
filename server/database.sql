@@ -36,7 +36,7 @@ CREATE TABLE sales
     FOREIGN KEY(clientId) REFERENCES clients(id) ON DELETE CASCADE
 );
 
-CREATE TABLE sale_items (
+CREATE TABLE saleItems (
     id INT(11) NOT NULL AUTO_INCREMENT,
     saleId INT(11) NOT NULL,
     productId INT(11) NOT NULL,
