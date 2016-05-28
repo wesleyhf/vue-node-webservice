@@ -18,6 +18,8 @@
                         <li><a v-link="{ name: 'dashboard.index' }">Dashboard</a></li>
                         <li><a v-link="{ name: 'category.index' }">Categories</a></li>
                         <li><a v-link="{ name: 'product.index' }">Products</a></li>
+                        <li><a v-link="{ name: 'client.index' }">Clients</a></li>
+                        <li><a v-link="{ name: 'sale.index' }">Sales</a></li>
                     </ul>
                 </div>
             </div>
