@@ -1,10 +1,12 @@
 var Vue = require('vue');
 var VueRouter = require('vue-router');
 var VueResource = require('vue-resource');
+var VueMoment = require('vue-moment');
 var configRouter = require('./shop-router');
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
+Vue.use(VueMoment);
 
 var router = new VueRouter({
     saveScrollPosition: true
@@ -12,9 +14,6 @@ var router = new VueRouter({
 
 // configure router - set all routes
 configRouter(router);
-
-// Debug mode
-Vue.config.debug = true;
 
 // Start app
 var Shop = require('./../components/shop.vue');
