@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    sale_id: {
+    saleId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
         key: 'id'
       }
     },
-    product_id: {
+    productId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER(11),
       allowNull: false
     },
-    unitary_value: {
+    unitaryValue: {
       type: DataTypes.DECIMAL,
       allowNull: false
     }

@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    client_id: {
+    clientId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       defaultValue: 'o'
     },
-    total_value: {
+    totalValue: {
       type: DataTypes.DECIMAL,
       allowNull: false
     }

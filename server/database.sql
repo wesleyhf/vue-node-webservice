@@ -31,7 +31,7 @@ CREATE TABLE sales
     clientId INT(11) NOT NULL,
     date DATETIME NOT NULL,
     status ENUM('o', 'f', 'c') DEFAULT 'o',
-    total_value NUMERIC(15,2) NOT NULL,
+    totalValue NUMERIC(15,2) NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY(clientId) REFERENCES clients(id) ON DELETE CASCADE
 );
@@ -41,7 +41,7 @@ CREATE TABLE sale_items (
     saleId INT(11) NOT NULL,
     productId INT(11) NOT NULL,
     quantity INT(11) NOT NULL,
-    unitary_value NUMERIC(15,2) NOT NULL,
+    unitaryValue NUMERIC(15,2) NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY(saleId) REFERENCES sales(id) ON DELETE CASCADE,
     FOREIGN KEY(productId) REFERENCES products(id) ON DELETE CASCADE
