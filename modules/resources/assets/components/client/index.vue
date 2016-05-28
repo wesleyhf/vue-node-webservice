@@ -32,7 +32,7 @@
                 <tr v-for="client in clients | filterBy search in 'name'">
                     <td>{{ client.id }}</td>
                     <td>{{ client.name }}</td>
-                    <td>{{ client.gender }}</td>
+                    <td>{{ client.gender | gender }}</td>
                     <td>{{ client.cpf }}</td>
                     <td>
                         <a class="btn btn-default btn-xs" v-link="{ name: 'client.show', params: { id: client.id }}">
@@ -62,6 +62,12 @@ export default {
             clients: [],
             search: '',
         };
+    },
+
+    filters: {
+        gender: function(gender) {
+            return gender === 'm' ? 'Male' : 'Female';
+        },
     },
 
     methods: {

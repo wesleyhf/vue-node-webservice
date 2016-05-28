@@ -35,7 +35,7 @@ export default {
     data: function() {
         return {
             name: '',
-            gender: '',
+            gender: 'm',
             cpf: '',
         };
     },

@@ -10,7 +10,7 @@
     <div class="well well-lg">
         <p><b>ID:</b> {{ client.id }}</p>
         <p><b>Name:</b> {{ client.name }}</p>
-        <p><b>Gender:</b> {{ client.gender }}</p>
+        <p><b>Gender:</b> {{ client.gender | gender }}</p>
         <p><b>CPF:</b> {{ client.cpf }}</p>
     </div>
 </template>
@@ -26,6 +26,12 @@ export default {
                 cpf: '',
             },
         };
+    },
+
+    filters: {
+        gender: function(gender) {
+            return gender === 'm' ? 'Male' : 'Female';
+        },
     },
 
     created: function() {
