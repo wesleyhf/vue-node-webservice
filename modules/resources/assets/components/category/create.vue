@@ -27,7 +27,7 @@ export default {
 
     methods: {
         submit: function() {
-            this.$resource('http://localhost:4000/category/{id}').save({
+            this.$resource('http://localhost:4000/category').save({
                 title: this.title
             }).then(function(response){
                 this.$router.go({name: 'category.index'});

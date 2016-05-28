@@ -56,7 +56,7 @@ export default {
 
     methods: {
         submit: function() {
-            this.$resource('http://localhost:4000/product/{id}').save({
+            this.$resource('http://localhost:4000/product').save({
                 name: this.name,
                 categoryId: this.categoryId,
                 value: this.value,

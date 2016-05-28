@@ -42,7 +42,7 @@ export default {
 
     methods: {
         submit: function() {
-            this.$resource('http://localhost:4000/client/{id}').save({
+            this.$resource('http://localhost:4000/client').save({
                 name: this.name,
                 gender: this.gender,
                 cpf: this.cpf
