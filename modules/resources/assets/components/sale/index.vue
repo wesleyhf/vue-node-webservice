@@ -6,14 +6,16 @@
         <li class="active">Sales</li>
     </ol>
 
-    <div class="input-group mb20">
-        <input type="text" class="form-control" placeholder="Search" v-model="search">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" v-model="search">
 
-        <span class="input-group-btn">
-            <a class="btn btn-success" v-link="{ name: 'sale.create' }">
-                <span class="glyphicon glyphicon-plus"></span> New Sale
-            </a>
-        </span>
+            <span class="input-group-btn">
+                <a class="btn btn-success" v-link="{ name: 'sale.create' }">
+                    <span class="glyphicon glyphicon-plus"></span> New Sale
+                </a>
+            </span>
+        </div>
     </div>
 
     <div class="table-responsive" v-if="sales.length">
