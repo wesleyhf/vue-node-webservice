@@ -42,7 +42,6 @@
                         <div class="input-group">
                             <input
                                 type="number"
-                                min="1"
                                 step="1"
                                 class="form-control"
                                 id="quantity"
@@ -137,6 +136,16 @@ export default {
 
     methods: {
         addCart: function() {
+            if (! this.productId) {
+                alert('Product not selected');
+                return;
+            }
+
+            if (! this.quantity) {
+                alert('Quantity not specified');
+                return;
+            }
+
             var item = {
                 productId: this.productId,
                 quantity: this.quantity,
@@ -162,15 +171,15 @@ export default {
         },
 
         submit: function() {
-            // this.$resource('http://localhost:4000/sale/{id}').save({
-            //     name: this.name,
-            //     gender: this.gender,
-            //     cpf: this.cpf
-            // }).then(function(response){
-            //     this.$router.go({name: 'sale.index'});
-            // }).catch(function(response){
-            //     console.log(response);
-            // });
+            this.$resource('http://localhost:4000/sale').save({
+                clientId: this.clientId,
+                totalValue: this.totalValue,
+                cart: this.cart
+            }).then(function(response){
+                this.$router.go({name: 'sale.index'});
+            }).catch(function(response){
+                console.log(response);
+            });
         },
     },
 

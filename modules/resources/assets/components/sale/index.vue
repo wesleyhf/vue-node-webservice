@@ -30,12 +30,18 @@
             </thead>
 
             <tbody>
-                <tr v-for="sale in sales | filterBy search in 'name'">
+                <tr v-for="sale in sales | filterBy search in 'client.name'">
                     <td>{{ sale.id }}</td>
-                    <td>{{ sale.clientId }}</td>
-                    <td>{{ sale.date }}</td>
-                    <td>{{ sale.status }}</td>
-                    <td>{{ sale.totalValue }}</td>
+                    <td>{{ sale.client.name }}</td>
+                    <td>{{ sale.date | moment "DD/MM/YYYY - HH:MM:SS" }}</td>
+
+                    <td>
+                        <span class="label label-success" v-if="sale.status === 'o'">Open</span>
+                        <span class="label label-info" v-if="sale.status === 'f'">Finalized</span>
+                        <span class="label label-danger" v-if="sale.status === 'c'">Closed</span>
+                    </td>
+
+                    <td>{{ sale.totalValue | currency '$ '}}</td>
                     <td>
                         <a class="btn btn-default btn-xs" v-link="{ name: 'sale.show', params: { id: sale.id }}">
                             <span class="glyphicon glyphicon-eye-open"></span> Show
